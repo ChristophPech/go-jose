@@ -113,6 +113,7 @@ func newAESCBC(keySize int) contentCipher {
 
 // Get an AEAD cipher object for the given content encryption algorithm
 func getContentCipher(alg ContentEncryption) contentCipher {
+	alg = strings.ReplaceAll(alg, "+", "-") //A128CBC+HS256 -> A128CBC-HS256
 	switch alg {
 	case A128GCM:
 		return newAESGCM(16)
