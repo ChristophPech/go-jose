@@ -29,6 +29,7 @@ import (
 	"fmt"
 	"hash"
 	"io"
+	"strings"
 
 	"golang.org/x/crypto/pbkdf2"
 
